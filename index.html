@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#002856">
+  <meta name="description" content="Biblioteca documental del Galápagos Life Fund. Normas, políticas y recursos ambientales y sociales. GLF environmental and social document library.">
+  <title>Biblioteca documental · GLF</title>
+  <link rel="icon" href="assets/glf-logo.png"><link rel="stylesheet" href="assets/fonts.css"><link rel="stylesheet" href="styles.css">
+  <script src="catalog.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+  <a href="#main" class="skip" data-i18n="skip">Saltar al contenido</a>
+  <header class="topbar">
+    <a class="product" href="#" aria-label="Biblioteca GLF"><span class="product-icon" aria-hidden="true">▥</span><span data-i18n="library">Biblioteca documental</span><span class="product-tag">GLF</span></a>
+    <div class="header-right"><div class="language-switch" aria-label="Language / Idioma"><button type="button" data-lang="es">ES</button><button type="button" data-lang="en">EN</button></div><a href="https://galapagoslifefund.org.ec/" target="_blank" rel="noopener noreferrer" class="brand"><img src="assets/glf-logo.png" width="58" height="60" alt="Galápagos Life Fund"></a></div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar" aria-label="Colecciones">
+      <div class="side-title" data-i18n="collections">Colecciones</div><nav id="collections"></nav>
+      <div class="side-note"><span class="small-icon" aria-hidden="true">↗</span><strong data-i18n="directSources">Siempre cerca de la fuente</strong><p data-i18n="sourceNote">Consulta la copia de la biblioteca o visita la entidad emisora para conocer sus publicaciones.</p><a href="https://galapagoslifefund.org.ec/es/recursos/" target="_blank" rel="noopener noreferrer" data-i18n="glfResources">Recursos GLF ↗</a></div>
+      <div class="sidebar-foot">GALÁPAGOS LIFE FUND<br><span data-i18n="environmentSocial">Medio ambiente · Sociedad · Conservación</span></div>
+    </aside>
+    <main id="main" tabindex="-1">
+      <section class="intro"><div><div class="eyebrow" data-i18n="eyebrow">CONOCIMIENTO PARA LA CONSERVACIÓN</div><h1 id="pageTitle">Biblioteca documental</h1><p id="pageDescription">Normas, políticas y herramientas para los proyectos del GLF.</p></div><div class="edition"><span data-i18n="collectionLabel">ACERVO DOCUMENTAL</span><strong id="totalCount"></strong><small data-i18n="resourcesAvailable">recursos para consultar</small></div></section>
+      <div class="search-box"><span id="searchIcon" aria-hidden="true"></span><label for="search" class="sr-only" data-i18n="searchLabel">Buscar documentos</label><input id="search" type="search" autocomplete="off" placeholder="Busca por título, tema, entidad o código…"><kbd aria-hidden="true">/</kbd></div>
+      <div class="view-tabs" role="tablist" aria-label="Explorar"><button id="tab-documents" type="button" role="tab" data-view="documents" aria-selected="true" data-i18n="documents">Documentos</button><button id="tab-topics" type="button" role="tab" data-view="topics" aria-selected="false" data-i18n="topics">Por tema</button><button id="tab-entities" type="button" role="tab" data-view="entities" aria-selected="false" data-i18n="entities">Por entidad</button></div>
+      <section id="documentView" role="tabpanel" aria-labelledby="tab-documents">
+        <button type="button" id="filterToggle" class="filter-toggle" aria-expanded="false" aria-controls="filterPanel">Filtros</button>
+        <div class="filters" id="filterPanel"><div><label for="topicFilter" data-i18n="topic">Tema</label><select id="topicFilter"></select></div><div><label for="entityFilter" data-i18n="entity">Entidad</label><select id="entityFilter"></select></div><div><label for="typeFilter" data-i18n="type">Tipo</label><select id="typeFilter"></select></div><div><label for="languageFilter" data-i18n="fileLanguage">Idioma del archivo</label><select id="languageFilter"></select></div><div><label for="availabilityFilter" data-i18n="availability">Disponibilidad</label><select id="availabilityFilter"></select></div></div>
+        <div class="results-toolbar"><p id="resultCount" role="status" aria-live="polite"></p><div class="result-tools"><button id="clearFilters" type="button" class="text-button" data-i18n="clear">Limpiar filtros</button><label for="sort" class="sr-only" data-i18n="sort">Ordenar</label><select id="sort"><option value="relevance" data-i18n="relevance">Orden recomendado</option><option value="title" data-i18n="alphabetical">Título A–Z</option><option value="year" data-i18n="recent">Año del documento</option></select></div></div>
+        <div id="activeFilters" class="active-filters"></div><div id="results" class="results"></div>
+        <div id="emptyState" class="empty-state" hidden><div aria-hidden="true">⌕</div><h2 data-i18n="noResults">No encontramos documentos</h2><p data-i18n="tryAgain">Prueba con otra palabra o elimina alguno de los filtros.</p><button type="button" id="emptyReset" class="primary-button" data-i18n="showAll">Ver todos los documentos</button></div>
+      </section>
+      <section id="browseView" hidden role="tabpanel"><p class="browse-hint" id="browseHint"></p><div id="browseGrid" class="browse-grid"></div></section>
+      <footer class="main-footer"><span data-i18n="footer">Una biblioteca. Todas las referencias.</span><button type="button" id="aboutButton" class="text-button" data-i18n="about">Acerca de esta biblioteca</button></footer>
+    </main>
+  </div>
+  <dialog id="detailDialog" aria-labelledby="detailTitle"><button class="dialog-close" id="closeDialog" type="button" aria-label="Cerrar / Close">✕</button><div id="detailContent"></div></dialog>
+  <noscript><p>Activa JavaScript para buscar y filtrar. Enable JavaScript to search and filter this library.</p></noscript>
+</body>
+</html>
